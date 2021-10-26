@@ -35,6 +35,14 @@ namespace Algorithms
 
             return nameList;
         }
+
+        public static void ChangePositions(Student[] list, int firstPosition, int secondPosition)
+        {
+            Student currentItem = list[firstPosition];
+            Student previousItems = list[secondPosition];
+            list[firstPosition] = previousItems;
+            list[secondPosition] = currentItem;
+        }
     }
 
 }

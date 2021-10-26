@@ -9,7 +9,6 @@
             { 2, "Insertion Sort" }
         };
 
-
         public static string GetSensoApiURL() => sensoApiURL;
         public static Dictionary<int, string> GetSortList() => sortList;
     }

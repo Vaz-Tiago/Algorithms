@@ -23,7 +23,8 @@ switch (sort)
         Utils.Print(students);
         break;
     case 2:
-        Console.WriteLine("Not implemented.");
+        InsertionSort.Sort(students, students.Length - 1);
+        Utils.Print(students);
         break;
 }
 
