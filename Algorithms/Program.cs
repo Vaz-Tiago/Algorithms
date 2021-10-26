@@ -30,6 +30,10 @@ switch (sort)
         MergeSort.Sort(students, 0, students.Length);
         Utils.Print(students);
         break;
+    case 4:
+        QuickSort.Sort(students, 0, students.Length - 1);
+        Utils.Print(students);
+        break;
 }
 
 
