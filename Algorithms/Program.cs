@@ -19,21 +19,18 @@ Console.WriteLine("---------------");
 switch (sort)
 {
     case 1:
-        MergeSort.Sort(students, 0, students.Length);
-        Utils.Print(students);
-        break;
-    case 2:
         InsertionSort.Sort(students, students.Length - 1);
         Utils.Print(students);
         break;
+    case 2:
+        SelectionSort.Sort(students, students.Length);
+        Utils.Print(students);
+        break;
+    case 3:
+        MergeSort.Sort(students, 0, students.Length);
+        Utils.Print(students);
+        break;
 }
-
-
-
-
-
-
-
 
 
 async Task<Student[]> GetStudents(int quantity)

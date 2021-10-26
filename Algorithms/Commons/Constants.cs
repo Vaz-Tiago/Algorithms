@@ -5,8 +5,9 @@
         private static readonly string sensoApiURL = "https://servicodados.ibge.gov.br/api/v1/censos/nomes/ranking";
         private readonly static Dictionary<int, string> sortList = new Dictionary<int, string>()
         {
-            { 1, "Merge Sort" },
-            { 2, "Insertion Sort" }
+            { 1, "Insertion Sort" },
+            { 2, "Selection Sort" },
+            { 3, "Merge Sort" },
         };
 
         public static string GetSensoApiURL() => sensoApiURL;

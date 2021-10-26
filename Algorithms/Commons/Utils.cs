@@ -43,6 +43,18 @@ namespace Algorithms
             list[firstPosition] = previousItems;
             list[secondPosition] = currentItem;
         }
+
+        public static int SmallerIndexSearch(Student[] list, int begin, int end)
+        {
+            int smaller = begin;
+            for (int i = begin; i < end; i++)
+            {
+                if (list[i].GetGrade() < list[smaller].GetGrade())
+                    smaller = i;
+            }
+
+            return smaller;
+        }
     }
 
 }
