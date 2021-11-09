@@ -13,7 +13,7 @@
             {
                 Student itemFirstHalf = list[firstHalf];
                 Student itemSecondHalf = list[secondHalf];
-                if (itemFirstHalf.GetGrade() < itemSecondHalf.GetGrade())
+                if (itemFirstHalf.GetId() < itemSecondHalf.GetId())
                 {
                     result[current] = itemFirstHalf;
                     firstHalf++;

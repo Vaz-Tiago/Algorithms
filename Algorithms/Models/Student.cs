@@ -2,21 +2,21 @@
 {
     public class Student
     {
-        public Student(string name, double grade)
+        public Student(string name, int grade)
         {
             this.name = name;
-            this.grade = grade;
+            this.Id = grade;
         }
 
         private string name { get; set; }
-        private double grade { get; set; }
+        private int Id { get; set; }
 
         public string GetName() => name;
-        public double GetGrade() => grade;
+        public int GetId() => Id;
 
         public override string ToString()
         {
-            return $"Grade: {this.grade:N2} - Name: {this.name}";
+            return $"Id: {this.Id} - Name: {this.name}";
         }
 
     }

@@ -49,7 +49,7 @@ namespace Algorithms
             int smaller = begin;
             for (int i = begin; i < end; i++)
             {
-                if (list[i].GetGrade() < list[smaller].GetGrade())
+                if (list[i].GetId() < list[smaller].GetId())
                     smaller = i;
             }
 

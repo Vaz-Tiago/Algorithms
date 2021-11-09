@@ -12,7 +12,7 @@
             for (int i = 1; i <= quantityOfElements; i++)
             {
                 int current = i;
-                while (current > 0 && list[current].GetGrade() < list[current - 1].GetGrade())
+                while (current > 0 && list[current].GetId() < list[current - 1].GetId())
                 {
                     Utils.ChangePositions(list, current, current - 1);
                     current--;

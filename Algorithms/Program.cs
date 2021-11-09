@@ -3,12 +3,15 @@
 Console.WriteLine("Quantity of items: ");
 int quantity = int.Parse(Console.ReadLine());
 
+#region Sort
 var optionList = Constants.GetSortList();
 Console.WriteLine("Choose the algorithm: ");
 PrintOptions(optionList);
 int sort = 0;
 while (!optionList.ContainsKey(sort))
     sort =  int.Parse(Console.ReadLine());
+
+
 
 Student[] students = await GetStudents(quantity);
 Console.WriteLine("---------------");
@@ -36,6 +39,53 @@ switch (sort)
         break;
 }
 
+#endregion
+
+
+#region Search
+Console.WriteLine("Search a grade? (1 - Yes, 2 - No)");
+bool hasSearch = int.Parse(Console.ReadLine()) == 1;
+
+if (hasSearch)
+{
+    var searchList = Constants.GetSearchList();
+    Console.WriteLine("Choose the algorithm");
+    PrintOptions(searchList);
+
+    int search = 0;
+    while (!searchList.ContainsKey(search))
+        search = int.Parse(Console.ReadLine());
+
+
+    int searchIndex;
+    Console.WriteLine("Type de student id: ");
+    searchIndex = int.Parse(Console.ReadLine());
+    switch (search)
+    {
+        case 1:
+            searchIndex = BinarySearch.Search(students, 0, students.Length, searchIndex);
+            break;
+        default:
+            searchIndex = -1;
+            break;
+    }
+
+    Console.WriteLine("---------------");
+    if(searchIndex >= 0)
+    {
+        Student student = students[searchIndex];
+        Console.WriteLine(student.ToString());
+    }
+    else
+        Console.WriteLine("Student not found.");
+}else
+{
+    Console.WriteLine("Thank you!");
+}
+
+#endregion
+
+
 
 async Task<Student[]> GetStudents(int quantity)
 {
@@ -44,8 +94,8 @@ async Task<Student[]> GetStudents(int quantity)
     for (int i = 0; i < quantity; i++)
     {
         Random random = new Random();
-        double grade = random.NextDouble() * 10;
-        students[i] = new Student(nameList[i], grade);
+        int id = random.Next(1000);
+        students[i] = new Student(nameList[i], id);
     }
 
     return students;

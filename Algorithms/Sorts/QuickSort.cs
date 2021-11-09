@@ -9,7 +9,7 @@
 
             for (int i = begin; i < end; i++)
             {
-                if(list[i].GetGrade() <= pivot.GetGrade())
+                if(list[i].GetId() <= pivot.GetId())
                 {
                     Utils.ChangePositions(list, smallerIndex, i);
                     smallerIndex++;

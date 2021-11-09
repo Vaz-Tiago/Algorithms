@@ -11,7 +11,13 @@
             { 4, "Quick Sort" }
         };
 
+        private readonly static Dictionary<int, string> searchList = new Dictionary<int, string>()
+        {
+            { 1, "Binary Search" },
+        };
+
         public static string GetSensoApiURL() => sensoApiURL;
         public static Dictionary<int, string> GetSortList() => sortList;
+        public static Dictionary<int, string> GetSearchList() => searchList;
     }
 }
